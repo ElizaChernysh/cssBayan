@@ -1,0 +1,32 @@
+.wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.bayan-item input,
+.bayan-content {
+  display: none;
+}
+
+.bayan-item {
+  background-color: aquamarine;
+  padding: 10px;
+}
+
+.bayan-title {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.bayan-title::after {
+  content: '+';
+}
+
+.bayan-item :checked + .bayan-title {
+  color: blueviolet;
+}
+
+.wrapper :hover + .bayan-title {
+  color: rgb(14, 68, 68);
+}
