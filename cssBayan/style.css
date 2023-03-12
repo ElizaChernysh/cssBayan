@@ -1,32 +1,90 @@
+body {
+background-color: bisque;
+}
+
+header {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
+}
+
 .wrapper {
   max-width: 800px;
   margin: 20px auto;
 }
 
-.bayan-item input,
-.bayan-content {
+.title {
+  font-weight: 800;
+  font-size: 3em;
+}
+
+.bayan li {
+  width: 100%;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
+}
+.bayan li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bayan li label {
+  /* background-color: rgb(151, 146, 140); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+label::after {
+  content: '+';
+  padding-right: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+input[type="radio"]{
   display: none;
 }
 
-.bayan-item {
-  background-color: aquamarine;
-  padding: 10px;
-}
-
-.bayan-title {
+.bayan .bayan-content {
   display: flex;
-  justify-content: space-between;
-
+  justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 70%;
+  transition: max-height 0.2s;
 }
 
-.bayan-title::after {
-  content: '+';
+.bayan input[type="radio"]:checked + label + .bayan-content {
+  max-height: 500px;
+  opacity: 100%;
 }
 
-.bayan-item :checked + .bayan-title {
-  color: blueviolet;
+li label:hover + .bayan-content {
+  max-height: 500px;
 }
 
-.wrapper :hover + .bayan-title {
-  color: rgb(14, 68, 68);
+.bayan-content {
+  height: 500px;
+}
+
+.bayan-content:hover {
+  opacity: 100%;
+  max-height: 500px;
+}
+
+li:hover label::after {
+  content: "-";
+}
+
+.bayan input[type="radio"]:checked + label::after {
+  content: "-";
+}
+
+.bayan-content img {
+  margin-bottom: 25px;
+  object-fit: contain;
 }
