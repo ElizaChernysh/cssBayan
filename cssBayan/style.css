@@ -12,6 +12,24 @@ header {
   margin: 20px auto;
 }
 
+label {
+  color: blue;
+}
+
+.bayan input[type="radio"]:checked + label {
+  color: black;
+}
+
+
+.wrapper:hover label {
+  color: black;
+}
+
+.wrapper:hover .bayan input[type="radio"]:checked + label {
+  color: black;
+}
+
+
 .title {
   font-weight: 800;
   font-size: 3em;
@@ -19,12 +37,13 @@ header {
 
 .bayan li {
   width: 100%;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
-}
-.bayan li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.bayan li:not(:last-child) {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.411);
 }
 
 .bayan li label {
@@ -32,7 +51,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 0;
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
@@ -87,4 +106,30 @@ li:hover label::after {
 .bayan-content img {
   margin-bottom: 25px;
   object-fit: contain;
+}
+
+@media only screen and (max-width: 840px)  {
+  .wrapper {
+    max-width: 500px;
+  }
+  .bayan-content {
+    max-width: 500px;
+  }
+
+  .bayan-content img {
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 325px)  {
+  .wrapper {
+    max-width: 300px;
+  }
+  .bayan-content {
+    max-width: 300px;
+  }
+
+  .bayan-content img {
+    object-fit: cover;
+  }
 }
