@@ -108,6 +108,11 @@ input[type="radio"]{
   .wrapper {
     max-width: 300px;
   }
+
+  .bayan li {
+    max-height: 300px;
+  }
+
   .bayan-content {
     max-width: 300px;
   }
