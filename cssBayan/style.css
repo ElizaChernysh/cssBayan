@@ -21,15 +21,6 @@ label {
 }
 
 
-.wrapper:hover label {
-  color: black;
-}
-
-.wrapper:hover .bayan input[type="radio"]:checked + label {
-  color: black;
-}
-
-
 .title {
   font-weight: 800;
   font-size: 3em;
@@ -82,10 +73,6 @@ input[type="radio"]{
   opacity: 100%;
 }
 
-li label:hover + .bayan-content {
-  max-height: 500px;
-}
-
 .bayan-content {
   height: 500px;
 }
@@ -93,10 +80,6 @@ li label:hover + .bayan-content {
 .bayan-content:hover {
   opacity: 100%;
   max-height: 500px;
-}
-
-li:hover label::after {
-  content: "-";
 }
 
 .bayan input[type="radio"]:checked + label::after {
@@ -131,5 +114,25 @@ li:hover label::after {
 
   .bayan-content img {
     object-fit: cover;
+  }
+}
+
+@media (hover: hover) {
+  .wrapper:hover label {
+    color: black;
+  }
+  
+  .wrapper:hover .bayan input[type="radio"]:checked + label {
+    color: black;
+  }
+
+  li label:hover + .bayan-content {
+    max-height: 500px;
+  }
+}
+
+@media (hover: none) {
+  label {
+    color: black;
   }
 }
